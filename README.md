@@ -1,3 +1,30 @@
+# Payload 3.0 Boilerplate
+
+This is a boilerplate for Payload 3.0 made by Evan Mikrut. It includes basic dependencies, grids, and structural components to get you started quickly and efficiently.
+
+# How to initialize
+
+So how do I get this going? Good question. This project preferably uses yarn 4.3.1, so I'd run "yarn set version 4.3.1". You may have to remove the package manager specification in the package.json. Once the version of yarn is good to go, make sure your .yarnrc.yml file has this as its contents =>
+
+nodeLinker: node-modules
+yarnPath: .yarn/releases/yarn-4.3.1.cjs
+
+then running yarn install or just yarn should put you in the green. Yarn dev should fire the project right up.
+
+# Taking advantage of the boilerplate
+
+This boilerplate comes with most of the groundwork scaffolded for you, and of course edit it all however you'd like. The general idea is to make your collections and blocks, add them to the payload config and blocks folder index.ts respectively, and follow the terminal warnings from there.
+
+You'll see a gutter and padding component has been typed and implemented already, so to add padding to each of your blocks just follow the padding options in the component and include it in your block objects.
+
+A CSS grid is already made for you as well, and I highly reccomend using it and learning about it from the [official documentation](https://facelessui.com/docs/css-grid).
+
+# Sidenotes
+
+If you're not familiar with Payload or the 3.0 version, definitely learn it and read the documentation [here](https://payloadcms.com/docs/getting-started/what-is-payload). The docs for 3.0 haven't been released officially yet because it's still in beta, but most of the information is identical and relevant, so you'll be alright.
+
+Below is the default readme information that came with the template.
+
 # Payload Blank Template
 
 A blank template for [Payload](https://github.com/payloadcms/payload) to help you get up and running quickly. This repo may have been created by running `npx create-payload-app@latest` and selecting the "blank" template or by cloning this template on [Payload Cloud](https://payloadcms.com/new/clone/blank).

@@ -14,17 +14,30 @@
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start"
   },
   "dependencies": {
-    "@payloadcms/db-mongodb": "beta",
-    "@payloadcms/next": "beta",
-    "@payloadcms/plugin-cloud": "beta",
-    "@payloadcms/richtext-lexical": "beta",
+    "@aws-sdk/client-s3": "^3.623.0",
+    "@aws-sdk/lib-storage": "^3.623.0",
+    "@faceless-ui/css-grid": "^1.2.1",
+    "@faceless-ui/modal": "^1.0.0",
+    "@faceless-ui/scroll-info": "^1.0.0",
+    "@faceless-ui/window-info": "^2.1.2",
+    "@payloadcms/db-mongodb": "^3.0.0-beta.73",
+    "@payloadcms/next": "^3.0.0-beta.73",
+    "@payloadcms/plugin-cloud": "^3.0.0-beta.73",
+    "@payloadcms/richtext-lexical": "^3.0.0-beta.73",
+    "@payloadcms/storage-s3": "^3.0.0-beta.73",
+    "@payloadcms/translations": "^3.0.0-beta.73",
+    "@payloadcms/ui": "^3.0.0-beta.73",
+    "@swc/core": "^1.7.6",
+    "aws-crt": "^1.21.3",
     "cross-env": "^7.0.3",
     "graphql": "^16.8.1",
     "next": "15.0.0-canary.53",
-    "payload": "beta",
+    "payload": "^3.0.0-beta.73",
     "react": "^19.0.0-rc-6230622a1a-20240610",
     "react-dom": "^19.0.0-rc-6230622a1a-20240610",
-    "sharp": "0.32.6"
+    "sharp": "0.32.6",
+    "swr": "^2.2.5",
+    "yjs": "^13.6.18"
   },
   "devDependencies": {
     "@types/node": "^20.12.12",
@@ -46,5 +59,6 @@
   "overrides": {
     "@types/react": "npm:types-react@19.0.0-rc.0",
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.0"
-  }
+  },
+  "packageManager": "yarn@4.3.1"
 }
