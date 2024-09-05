@@ -13,6 +13,7 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
+    pages: Page;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
@@ -28,6 +29,7 @@ export interface Config {
 export interface UserAuthOperations {
   forgotPassword: {
     email: string;
+    password: string;
   };
   login: {
     email: string;
@@ -39,6 +41,7 @@ export interface UserAuthOperations {
   };
   unlock: {
     email: string;
+    password: string;
   };
 }
 /**
@@ -47,6 +50,7 @@ export interface UserAuthOperations {
  */
 export interface User {
   id: string;
+  role: 'user' | 'editor' | 'author' | 'admin';
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -76,6 +80,43 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "pages".
+ */
+export interface Page {
+  id: string;
+  title: string;
+  hero: {
+    type: 'standard' | 'lowImpact';
+    standard?: {
+      standardHero: {
+        padding?: {
+          paddingTop?: ('small' | 'medium' | 'large') | null;
+          paddingBottom?: ('small' | 'medium' | 'large') | null;
+        };
+        heading: string;
+        heroImage: string | Media;
+      };
+    };
+    lowImpact?: {
+      lowImpactHero: {
+        padding?: {
+          paddingTop?: ('small' | 'medium' | 'large') | null;
+          paddingBottom?: ('small' | 'medium' | 'large') | null;
+        };
+        heading: string;
+      };
+    };
+  };
+  layout?: unknown[] | null;
+  slug?: string | null;
+  author?: (string | null) | User;
+  fullTitle?: string | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

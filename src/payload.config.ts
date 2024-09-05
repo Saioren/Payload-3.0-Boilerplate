@@ -9,6 +9,7 @@ import { S3Client } from "@aws-sdk/client-s3";
 
 import { Users } from '@/app/(payload)/collections/Users'
 import { Media } from '@/app/(payload)/collections/Media'
+import Pages from '@/app/(payload)/collections/Pages'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -40,7 +41,7 @@ export default buildConfig({
   admin: {
     user: Users.slug,
   },
-  collections: [Users, Media],
+  collections: [Users, Media, Pages],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
@@ -51,6 +52,6 @@ export default buildConfig({
   }),
   sharp,
   plugins: [
-    s3StoragePlugin,
+    // s3StoragePlugin, // if hosting images in a bucket, you can use something like this and refer to the payload documentation
   ],
 })

@@ -7,7 +7,9 @@ const StandardHero: React.FC<Hero> = (props) => {
 
   if (!standardHero) return null
 
-  return null
+  const { heroImage, padding, heading } = standardHero
+
+  return <p>{heading}</p>
 }
 
 export default StandardHero

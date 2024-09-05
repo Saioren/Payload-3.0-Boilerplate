@@ -3,11 +3,13 @@ import classes from './index.module.scss'
 import { Hero } from '@/types/Layout/Hero/types' // Import the correct type
 
 const LowImpactHero: React.FC<Hero> = (props) => {
-  const { lowImpact } = props
+  const { lowImpactHero } = props
 
-  if (!lowImpact) return null
+  if (!lowImpactHero) return null
 
-  return null
+  const { padding, heading } = lowImpactHero
+
+  return <p>{heading}</p>
 }
 
 export default LowImpactHero
